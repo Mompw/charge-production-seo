@@ -6,8 +6,20 @@
     <title>CV Wedson Momperousse - Spécialiste SEO</title>
     <style>
         @media print {
-            body { margin: 0; padding: 0; }
-            .page { page-break-after: avoid; margin: 0; box-shadow: none; }
+            body { margin: 0; padding: 0; background: white; }
+            .page { 
+                page-break-after: avoid; 
+                margin: 0; 
+                box-shadow: none;
+                height: 297mm;
+                overflow: hidden;
+            }
+            .main-grid {
+                height: calc(297mm - 180px) !important;
+            }
+            .main-content {
+                overflow-y: visible !important; /* Pas d'ascenseur à l'impression */
+            }
             .btn-export { display: none; }
         }
         
@@ -25,11 +37,12 @@
         
         .page {
             width: 210mm;
-            height: 297mm;
+            height: 297mm; /* Fixe la hauteur totale au format A4 à l'écran */
             background: white;
             margin: 0 auto;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            padding: 0;
+            display: flex;
+            flex-direction: column;
             overflow: hidden;
         }
         
@@ -38,6 +51,7 @@
             padding: 35px 40px;
             color: white;
             position: relative;
+            flex-shrink: 0;
         }
         
         .header-content {
@@ -97,18 +111,21 @@
         .main-grid {
             display: grid;
             grid-template-columns: 280px 1fr;
-            height: calc(297mm - 160px);
+            height: calc(297mm - 180px); /* Hauteur calculée pour s'aligner sur le bas de la page */
+            overflow: hidden;
         }
         
         .sidebar {
             background: #f8f9fa;
             padding: 30px 25px;
             border-right: 1px solid #e0e0e0;
+            overflow-y: auto; /* Permet de scroller à gauche si les compétences débordent un jour */
         }
         
         .main-content {
             padding: 30px 40px;
-            overflow-y: auto;
+            overflow-y: auto; /* Active l'ascenseur pour les Expériences et les Formations */
+            height: 100%;
         }
         
         .section {
@@ -353,11 +370,6 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 16px rgba(6, 96, 221, 0.4);
         }
-        
-        .color-accent-1 { color: #0660dd; }
-        .color-accent-2 { color: #01bb51; }
-        .color-accent-3 { color: #fe5d42; }
-        .color-accent-4 { color: #fed122; }
     </style>
 </head>
 <body>
@@ -370,8 +382,8 @@
                     <img src="Image/new-photo-profile.png" alt="Wedson Momperousse" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%230660dd%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22white%22 font-size=%2240%22 font-family=%22Arial%22 font-weight=%22bold%22%3EWM%3C/text%3E%3C/svg%3E'">
                 </div>
                 <div class="header-text">
-                    <div class="name">Chargé de production & SEO</div>
-                    <div class="title">Wedson Momperousse</div>
+                    <div class="name">Wedson Momperousse</div>
+                    <div class="title">Chargé de production & SEO / Spécialiste SEO</div>
                     <div class="contact-info">
                         <div class="contact-item">📧 momperousse.wedson@gmail.com</div>
                         <div class="contact-item">📱 06 21 72 29 88</div>
@@ -418,7 +430,6 @@
                             <div class="tool-tag">Keyword planner</div>
                             <div class="tool-tag">Tag manager</div>
                             <div class="tool-tag">Meta ads</div>
-
                         </div>
                     </div>
                     
@@ -435,7 +446,6 @@
                             <div class="tool-tag">Json</div>
                             <div class="tool-tag">Antigravity</div>
                             <div class="tool-tag">Apify</div>
-                            
                         </div>
                     </div>
                     
@@ -449,17 +459,15 @@
                             <div class="tool-tag">Make</div>
                             <div class="tool-tag">N8N</div>
                             <div class="tool-tag">Brevo</div>
-                            
                         </div>
                     </div>
 
-                      <div class="skill-category">
+                    <div class="skill-category">
                         <div class="skill-cat-title">Gestion de projet digital</div>
                         <div class="tools-grid">
                             <div class="tool-tag">Trello</div>
                             <div class="tool-tag">Jira</div>
                             <div class="tool-tag">Notion</div>
-                         
                         </div>
                     </div>
                 </div>
@@ -485,7 +493,7 @@
             
             <div class="main-content">
                 <div class="objectif">
-                    <strong>Profil :</strong>Expertise en production Web et optimisation de la visibilité organique (SEO). Centré sur la gestion technique de plateformes, la restructuration d'architectures sémantiques et le pilotage des performances (Google Search Console, Analytics), je conçois des interfaces on-page performantes et centrées sur l'expérience utilisateur. Cette maîtrise technique s'adosse à une solide trajectoire de 10 ans dans la gestion de projets et la relation client B2B, me conférant une rigueur organisationnelle stricte pour mener de front plusieurs projets complexes, optimiser les processus de production et échanger avec fluidité avec une clientèle exigeante.
+                    <strong>Profil :</strong> Expertise en production Web et optimisation de la visibilité organique (SEO). Centré sur la gestion technique de plateformes, la restructuration d'architectures sémantiques et le pilotage des performances (Google Search Console, Analytics), je conçois des interfaces on-page performantes et centrées sur l'expérience utilisateur. Cette maîtrise technique s'adosse à une solide trajectoire de 10 ans dans la gestion de projets et la relation client B2B, me conférant une rigueur organisationnelle stricte pour mener de front plusieurs projets complexes, optimiser les processus de production et échanger avec fluidité avec une clientèle exigeante.
                 </div>
                 
                 <div class="section">
@@ -516,9 +524,7 @@
                         </div>
                         <div class="exp-missions">
                             <ul>
-                                <li>Élaboration et déploiement stratégie éditoriale SEO multilingue</li>
-                               <li>Élaboration et déploiement de la stratégie éditoriale</li>
-                                <li>SEO International & multilingue </li>
+                                <li>Élaboration et déploiement de la stratégie éditoriale SEO multilingue</li>
                                 <li>Gestion d’AgrycoMag (blog) : Pilotage d’une équipe de rédacteurs, planification d’articles, accompagnement d’un stagiaire en rédaction Web, rédaction de briefs</li>     
                                 <li>Refonte catégories e-commerce avec optimisation maillage interne</li>
                                 <li>Gestion technique : redirections URL, codes 404, meta tags</li>
@@ -545,15 +551,11 @@
                         </div>
                         <div class="exp-missions">
                             <ul>
-                                <li>Gestion d'ubn portefeuille de clients grands comptes et renouvellements abonnements</li>
+                                <li>Gestion d'un portefeuille de clients grands comptes et renouvellements abonnements</li>
                                 <li>Support multicanal (téléphone, mail, chat) français-anglais</li>
-                                <li>Gestion des abonnements</li>
                                 <li>Renégociation des contrats de réabonnement</li>
                                 <li>Administration des impayés et relances clients</li>
-                                <li>Conseil et assistance par mail, téléphone & chat </li>
-                                <li>Gestion des dépôts bancaires </li>
-                                <li>Présentation et compte rendu des données statistiques des renouvellements</li> 
-
+                                <li>Présentation et compte rendu des données statistiques des renouvellements</li> 
                             </ul>
                         </div>
                     </div>
@@ -570,10 +572,8 @@
                                 <li>Coordination des informations en interne et externe</li>
                                 <li>Gestion e-réputation et fiches Google My Business</li>
                                 <li>Mise à jour des bases de données</li>
-                                <li>Présentation par audio/vidéo conférence Administratif des formations Subway</li>
-                                <li>Traduction de documents</li>
-                                <li>Négociation et mise en place de partenariats pour le centre de formation</li>
-                                <li>Back office des cours en ligne</li>
+                                <li>Présentation par audio/vidéo conférence du volet administratif des formations Subway</li>
+                                <li>Traduction de documents et back office des cours en ligne</li>
                                 <li>Participation à la mise en place d’ateliers de formation</li>
                             </ul>
                         </div>
